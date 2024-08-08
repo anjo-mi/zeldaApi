@@ -7,7 +7,45 @@ html{
     font-size: 62.5%;
 }
 
+.monsterSchema,
+.equipSchema,
+.materialSchema,
+.creatureSchema,
+.treasureSchema{ 
+    height: auto;
+    width: 95%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .hidden{
     display: none;
 }
 
+.basicInfo{
+    height: auto;
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.basicInfo > section{
+    height: 3rem;
+    width: 100%;
+    text-align: center;
+}
+
+.basicInfo > img{
+    height: 10rem;
+    width: 10rem;
+
+}
+
+.basicInfo{
+    display: flex;
+
+}
