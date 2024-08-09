@@ -1,6 +1,10 @@
 document.getElementById('entry').addEventListener('keypress', getEntry)
 
-
+let monster = document.querySelector('.monster')
+let equip = document.querySelector('.equip')
+let material = document.querySelector('.material')
+let creature = document.querySelector('.creature')
+let treasure = document.querySelector('.treasure')
 
 let urlWholeCompendium = 'https://botw-compendium.herokuapp.com/api/v3/compendium/all'
 
@@ -16,19 +20,19 @@ getAllEntries(urlWholeCompendium)
 
 function showAndHide(category){
     if (category === 'monsters'){
-        document.querySelector('.monster').classList.toggle('hidden')
+        monster.classList.remove('hidden')
     }
     if (category === 'equipment'){
-        document.querySelector('.equip').classList.toggle('hidden')
+        equip.classList.remove('hidden')
     }
     if (category === 'materials'){
-        document.querySelector('.material').classList.toggle('hidden')
+        material.classList.remove('hidden')
     }
     if (category === 'creatures'){
-        document.querySelector('.creature').classList.toggle('hidden')
+        creature.classList.remove('hidden')
     }
     if (category === 'treasure'){
-        document.querySelector('.treasure').classList.toggle('hidden')
+        treasure.classList.remove('hidden')
     }
 }
 
@@ -43,6 +47,11 @@ function getEntry(event){
             .then(res => res.json())
             .then(data => {
                 let category = data.data.category
+                monster.classList.add('hidden')
+                equip.classList.add('hidden')
+                material.classList.add('hidden')
+                creature.classList.add('hidden')
+                treasure.classList.add('hidden')
                 showAndHide(category)
                 console.log(data)
                 if (category === 'monsters'){
