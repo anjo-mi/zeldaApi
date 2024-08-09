@@ -7,15 +7,17 @@ html{
     font-size: 62.5%;
 }
 
-.monsterSchema,
-.equipSchema,
-.materialSchema,
-.creatureSchema,
-.treasureSchema{ 
+.monster,
+.equip,
+.material,
+.creature,
+.treasure{ 
     height: auto;
     width: 95%;
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
 }
 
 .hidden{
@@ -30,7 +32,14 @@ html{
     flex-direction: column;
     text-align: center;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
+}
+
+.schema > .location,
+.schema > .drops,
+.schema > .details{
+    height: 150px;
+    width: 80%;
 }
 
 .basicInfo > section{
