@@ -14,20 +14,20 @@ const getAllEntries = url =>{
 
 getAllEntries(urlWholeCompendium)
 
-function show(category){
-    if (category === 'monsters'){
+function showAndHide(category){
+    if (category === 'monsters' && document.querySelector('.monster').classList.contains('hidden')){
         document.querySelector('.monster').classList.toggle('hidden')
     }
-    if (category === 'equipment'){
+    if (category === 'equipment' && document.querySelector('.equip').classList.contains('hidden')){
         document.querySelector('.equip').classList.toggle('hidden')
     }
-    if (category === 'materials'){
+    if (category === 'materials' && document.querySelector('.material').classList.contains('hidden')){
         document.querySelector('.material').classList.toggle('hidden')
     }
-    if (category === 'creatures'){
+    if (category === 'creatures' && document.querySelector('.creature').classList.contains('hidden')){
         document.querySelector('.creature').classList.toggle('hidden')
     }
-    if (category === 'treasure'){
+    if (category === 'treasure' && document.querySelector('.treasure').classList.contains('hidden')){
         document.querySelector('.treasure').classList.toggle('hidden')
     }
 }
@@ -42,8 +42,10 @@ function getEntry(event){
         fetch(urlCompendiumSearch)
             .then(res => res.json())
             .then(data => {
+                let category = data.data.category
+                showAndHide(category)
                 console.log(data)
-                if (data.data.category === 'monsters'){
+                if (category === 'monsters'){
                     document.querySelector('.monster>.basicInfo>.category').textContent = data.data.category
                     document.querySelector('.monster>.basicInfo>.img').src = data.data.image
                     document.querySelector('.monster>.basicInfo>.name').textContent = data.data.name
@@ -51,7 +53,7 @@ function getEntry(event){
                     document.querySelector('.monster>.drops').textContent = data.data.drops.join(', ')
                     document.querySelector('.monster>.details').textContent = data.data.description
                 }
-                if (data.data.category === 'equipment'){
+                if (category === 'equipment'){
                     document.querySelector('.equip>.basicInfo>.category').textContent = data.data.category
                     document.querySelector('.equip>.basicInfo>.img').src = data.data.image
                     document.querySelector('.equip>.basicInfo>.name').textContent = data.data.name
@@ -64,7 +66,7 @@ function getEntry(event){
 
                     }
                 }
-                if (data.data.category === 'materials'){
+                if (category === 'materials'){
                     document.querySelector('.material>.basicInfo>.category').textContent = data.data.category
                     document.querySelector('.material>.basicInfo>.img').src = data.data.image
                     document.querySelector('.material>.basicInfo>.name').textContent = data.data.name
@@ -73,7 +75,7 @@ function getEntry(event){
                     document.querySelector('.material>.cooked').textContent = `Cooking Effects: ${data.data.cooking_effect}`
                     document.querySelector('.material>.recovery').textContent = `${data.data.hearts_recovered} Hearts Recovered (Raw)`
                 }
-                if (data.data.category === 'creatures'){
+                if (category === 'creatures'){
                     document.querySelector('.creature>.basicInfo>.category').textContent = data.data.category
                     document.querySelector('.creature>.basicInfo>.img').src = data.data.image
                     document.querySelector('.creature>.basicInfo>.name').textContent = data.data.name
@@ -84,7 +86,7 @@ function getEntry(event){
                         document.querySelector('.creature>.recovery').textContent = `${data.data.hearts_recovered} Hearts Recovered (Raw)`
                     }
                 }
-                if (data.data.category === 'treasure'){
+                if (category === 'treasure'){
                     document.querySelector('.treasure>.basicInfo>.category').textContent = data.data.category
                     document.querySelector('.treasure>.basicInfo>.img').src = data.data.image
                     document.querySelector('.treasure>.basicInfo>.name').textContent = data.data.name

@@ -20,9 +20,9 @@ html{
     align-items: center;
 }
 
-/* .hidden{
+.hidden{
     display: none;
-} */
+}
 
 .basicInfo{
     height: auto;
