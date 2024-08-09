@@ -20,9 +20,9 @@ html{
     align-items: center;
 }
 
-.hidden{
+/* .hidden{
     display: none;
-}
+} */
 
 .basicInfo{
     height: auto;
@@ -37,7 +37,10 @@ html{
 
 .schema > .location,
 .schema > .drops,
-.schema > .details{
+.schema > .details,
+.schema > .attOrDef,
+.schema > .recovery,
+.schema > .cooked{
     height: 150px;
     width: 80%;
 }
