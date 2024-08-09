@@ -14,6 +14,24 @@ const getAllEntries = url =>{
 
 getAllEntries(urlWholeCompendium)
 
+function show(category){
+    if (category === 'monsters'){
+        document.querySelector('.monster').classList.toggle('hidden')
+    }
+    if (category === 'equipment'){
+        document.querySelector('.equip').classList.toggle('hidden')
+    }
+    if (category === 'materials'){
+        document.querySelector('.material').classList.toggle('hidden')
+    }
+    if (category === 'creatures'){
+        document.querySelector('.creature').classList.toggle('hidden')
+    }
+    if (category === 'treasure'){
+        document.querySelector('.treasure').classList.toggle('hidden')
+    }
+}
+
 // data.data.sort((a,b) => a.id - b.id)
 
 function getEntry(event){
@@ -45,7 +63,6 @@ function getEntry(event){
                         document.querySelector('.equip>.attOrDef').textContent = `Defense: ${data.data.properties.defense}`
 
                     }
-                    // document.querySelector('.equip>.recovery').textContent = `${data.data.hearts_recovered} Hearts Recovered (Raw)`
                 }
                 if (data.data.category === 'materials'){
                     document.querySelector('.material>.basicInfo>.category').textContent = data.data.category
