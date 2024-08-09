@@ -15,6 +15,9 @@ function getEntry(event){
             .then(res => res.json())
             .then(data => {
                 console.log(data)
+                if (data.data.category === 'monsters'){
+                    document.querySelector('.monster>.basicInfo>.category').textContent = data.data.category
+                }
             })
             .catch(err => {
                 console.log(`the error: ${err}, occurred`)
