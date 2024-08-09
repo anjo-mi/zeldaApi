@@ -15,19 +15,19 @@ const getAllEntries = url =>{
 getAllEntries(urlWholeCompendium)
 
 function showAndHide(category){
-    if (category === 'monsters' && document.querySelector('.monster').classList.contains('hidden')){
+    if (category === 'monsters'){
         document.querySelector('.monster').classList.toggle('hidden')
     }
-    if (category === 'equipment' && document.querySelector('.equip').classList.contains('hidden')){
+    if (category === 'equipment'){
         document.querySelector('.equip').classList.toggle('hidden')
     }
-    if (category === 'materials' && document.querySelector('.material').classList.contains('hidden')){
+    if (category === 'materials'){
         document.querySelector('.material').classList.toggle('hidden')
     }
-    if (category === 'creatures' && document.querySelector('.creature').classList.contains('hidden')){
+    if (category === 'creatures'){
         document.querySelector('.creature').classList.toggle('hidden')
     }
-    if (category === 'treasure' && document.querySelector('.treasure').classList.contains('hidden')){
+    if (category === 'treasure'){
         document.querySelector('.treasure').classList.toggle('hidden')
     }
 }
