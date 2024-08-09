@@ -17,6 +17,11 @@ function getEntry(event){
                 console.log(data)
                 if (data.data.category === 'monsters'){
                     document.querySelector('.monster>.basicInfo>.category').textContent = data.data.category
+                    document.querySelector('.monster>.basicInfo>.img').src = data.data.image
+                    document.querySelector('.monster>.basicInfo>.name').textContent = data.data.name
+                    document.querySelector('.monster>.location').textContent = data.data.common_locations.join(', ')
+                    document.querySelector('.monster>.drops').textContent = data.data.drops
+                    document.querySelector('.monster>.details').textContent = data.data.description
                 }
             })
             .catch(err => {

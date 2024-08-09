@@ -43,6 +43,7 @@ html{
 .schema > .cooked{
     height: 150px;
     width: 80%;
+    text-align: center;
 }
 
 .basicInfo > section{
