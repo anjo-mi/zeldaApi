@@ -58,7 +58,11 @@ function getEntry(event){
                     document.querySelector('.monster>.basicInfo>.category').textContent = data.data.category
                     document.querySelector('.monster>.basicInfo>.img').src = data.data.image
                     document.querySelector('.monster>.basicInfo>.name').textContent = data.data.name
-                    document.querySelector('.monster>.location').textContent = data.data.common_locations.join(', ')
+                    if (data.data.common_locations){
+                        document.querySelector('.monster>.location').textContent = data.data.common_locations.join(', ')
+                    }else {
+                        document.querySelector('.monster>.location').textContent = 'For you to Find'
+                    }
                     document.querySelector('.monster>.drops').textContent = data.data.drops.join(', ')
                     document.querySelector('.monster>.details').textContent = data.data.description
                 }
@@ -66,7 +70,11 @@ function getEntry(event){
                     document.querySelector('.equip>.basicInfo>.category').textContent = data.data.category
                     document.querySelector('.equip>.basicInfo>.img').src = data.data.image
                     document.querySelector('.equip>.basicInfo>.name').textContent = data.data.name
-                    document.querySelector('.equip>.location').textContent = data.data.common_locations.join(', ')
+                    if (data.data.common_locations){
+                        document.querySelector('.equip>.location').textContent = data.data.common_locations.join(', ')
+                    }else {
+                        document.querySelector('.equip>.location').textContent = 'For you to Find'
+                    }
                     document.querySelector('.equip>.details').textContent = data.data.description
                     if (data.data.properties.attack){    
                         document.querySelector('.equip>.attOrDef').textContent = `Attack: ${data.data.properties.attack}`
@@ -79,7 +87,11 @@ function getEntry(event){
                     document.querySelector('.material>.basicInfo>.category').textContent = data.data.category
                     document.querySelector('.material>.basicInfo>.img').src = data.data.image
                     document.querySelector('.material>.basicInfo>.name').textContent = data.data.name
-                    document.querySelector('.material>.location').textContent = data.data.common_locations.join(', ')
+                    if (data.data.common_locations){
+                        document.querySelector('.material>.location').textContent = data.data.common_locations.join(', ')
+                    }else {
+                        document.querySelector('.material>.location').textContent = 'For you to Find'
+                    }
                     document.querySelector('.material>.details').textContent = data.data.description
                     document.querySelector('.material>.cooked').textContent = `Cooking Effects: ${data.data.cooking_effect}`
                     document.querySelector('.material>.recovery').textContent = `${data.data.hearts_recovered} Hearts Recovered (Raw)`
@@ -88,7 +100,11 @@ function getEntry(event){
                     document.querySelector('.creature>.basicInfo>.category').textContent = data.data.category
                     document.querySelector('.creature>.basicInfo>.img').src = data.data.image
                     document.querySelector('.creature>.basicInfo>.name').textContent = data.data.name
-                    document.querySelector('.creature>.location').textContent = data.data.common_locations.join(', ')
+                    if (data.data.common_locations){
+                        document.querySelector('.creature>.location').textContent = data.data.common_locations.join(', ')
+                    }else {
+                        document.querySelector('.creature>.location').textContent = 'For you to Find'
+                    }
                     document.querySelector('.creature>.details').textContent = data.data.description
                     if (data.data.edible){
                         document.querySelector('.creature>.cooked').textContent = `Cooking Effects: ${data.data.cooking_effect}`
@@ -99,7 +115,11 @@ function getEntry(event){
                     document.querySelector('.treasure>.basicInfo>.category').textContent = data.data.category
                     document.querySelector('.treasure>.basicInfo>.img').src = data.data.image
                     document.querySelector('.treasure>.basicInfo>.name').textContent = data.data.name
-                    document.querySelector('.treasure>.location').textContent = data.data.common_locations.join(', ')
+                    if (data.data.common_locations){
+                        document.querySelector('.treasure>.location').textContent = data.data.common_locations.join(', ')
+                    }else {
+                        document.querySelector('.treasure>.location').textContent = 'For you to Find'
+                    }
                     document.querySelector('.treasure>.drops').textContent = data.data.drops.join(', ')
                     document.querySelector('.treasure>.details').textContent = data.data.description
                 }
