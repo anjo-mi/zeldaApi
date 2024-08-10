@@ -1,5 +1,5 @@
 document.getElementById('entry').addEventListener('keypress', getEntry)
-
+document.getElementById('enter').addEventListener('click', getEntry)
 let monster = document.querySelector('.monster')
 let equip = document.querySelector('.equip')
 let material = document.querySelector('.material')
@@ -39,7 +39,7 @@ function showAndHide(category){
 // data.data.sort((a,b) => a.id - b.id)
 
 function getEntry(event){
-    if(event.key === 'Enter'){
+    if(event.key === 'Enter' || event.type === 'click'){
         event.preventDefault()
         let search = document.getElementById('entry').value
         let urlCompendiumSearch = `https://botw-compendium.herokuapp.com/api/v3/compendium/entry/${search}`
