@@ -77,9 +77,11 @@ function getEntry(event){
                     }
                     document.querySelector('.equip>.details').textContent = data.data.description
                     if (data.data.properties.attack){    
-                        document.querySelector('.equip>.attOrDef').textContent = `Attack: ${data.data.properties.attack}`
+                        document.querySelector('.equip>.attOrDef').textContent = data.data.properties.attack
+                        document.querySelector('.equip>.attOrDef').style.color = 'green'
                     }else{
-                        document.querySelector('.equip>.attOrDef').textContent = `Defense: ${data.data.properties.defense}`
+                        document.querySelector('.equip>.attOrDef').textContent = data.data.properties.defense
+                        document.querySelector('.equip>.attOrDef').style.color = 'red'
 
                     }
                 }
@@ -107,8 +109,8 @@ function getEntry(event){
                     }
                     document.querySelector('.creature>.details').textContent = data.data.description
                     if (data.data.edible){
-                        document.querySelector('.creature>.cooked').textContent = `Cooking Effects: ${data.data.cooking_effect}`
-                        document.querySelector('.creature>.recovery').textContent = `${data.data.hearts_recovered} Hearts Recovered (Raw)`
+                        document.querySelector('.creature>.cooked').textContent = data.data.cooking_effect
+                        document.querySelector('.creature>.recovery').textContent = `${data.data.hearts_recovered} Heart(s) Recovered (Raw)`
                     }
                 }
                 if (category === 'treasure'){
