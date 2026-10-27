@@ -6,7 +6,7 @@ let material = document.querySelector('.material')
 let creature = document.querySelector('.creature')
 let treasure = document.querySelector('.treasure')
 
-let urlWholeCompendium = 'https://botw-compendium.herokuapp.com/api/v3/compendium/all'
+let urlWholeCompendium = 'https://api.hyrule-compendium.com/v3/compendium/all'
 
 const getAllEntries = url =>{
     fetch(url)
@@ -42,7 +42,7 @@ function getEntry(event){
     if(event.key === 'Enter' || event.type === 'click'){
         event.preventDefault()
         let search = document.getElementById('entry').value
-        let urlCompendiumSearch = `https://botw-compendium.herokuapp.com/api/v3/compendium/entry/${search}`
+        let urlCompendiumSearch = `https://api.hyrule-compendium.com/v3/compendium/entry/${search}`
         fetch(urlCompendiumSearch)
             .then(res => res.json())
             .then(data => {
